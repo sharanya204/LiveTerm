@@ -2,6 +2,9 @@
 
 import * as bin from './index';
 import config from '../../../config.json';
+import Platypus from '../../images/platypus.png';
+import Image from 'next/image';
+import Pixelart from '../../components/pixelate';
 
 // Help
 export const help = async (args: string[]): Promise<string> => {
@@ -18,7 +21,7 @@ export const help = async (args: string[]): Promise<string> => {
 \n${c}\n
 [tab]: trigger completion.
 [ctrl+l]/clear: clear terminal.\n
-Type 'whoami' for information on who I am.
+Type 'whoami' or 'about' for information on who I am.
 `;
 };
 
@@ -128,6 +131,11 @@ export const date = async (args: string[]): Promise<string> => {
 export const sudo = async (args?: string[]): Promise<string> => {
   window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank'); // ...I'm sorry
   return `Permission denied: with little power comes... no responsibility? `;
+};
+
+export const pixelate = () => {
+  window.open(`${config.platypusImage}`);
+  return `A pixel art platypus`;
 };
 
 // Banner

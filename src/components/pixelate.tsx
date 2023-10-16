@@ -1,8 +1,14 @@
 import React from 'react';
 import config from '../../config.json';
+import Platypus from '../images/platypus.png';
+import Image from 'next/image';
 
-export const pixelate = () => {
-  return <div className="flex flex-row space-x-2"></div>;
+export const Pixelart = () => {
+  return (
+    <div className="flex flex-row space-x-2">
+      <Image src={Platypus} alt="a pixel art platypus" />
+    </div>
+  );
 };
 
-export default pixelate;
+export default Pixelart;
