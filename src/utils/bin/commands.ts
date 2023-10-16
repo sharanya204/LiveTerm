@@ -14,11 +14,11 @@ export const help = async (args: string[]): Promise<string> => {
       c += Object.keys(bin).sort()[i - 1] + ' ';
     }
   }
-  return `Welcome! Here are all the available commands:
+  return `Hello! Here's a list of available commands:
 \n${c}\n
 [tab]: trigger completion.
 [ctrl+l]/clear: clear terminal.\n
-Type 'whoami' to display summary.
+Type 'whoami' for information on who I am.
 `;
 };
 
@@ -33,24 +33,17 @@ export const about = async (args: string[]): Promise<string> => {
   return `Hiya, I'm ${config.name}. 
 Welcome to my portledge!
 More about me:
-'whoami' - short summary.
+'whoami' - who am I.
 'resume' - my latest resume.
-'readme' - my github readme.`;
+'readme' - my github readme.
+'pixelate' - some pixel art.
+`;
 };
 
 export const resume = async (args: string[]): Promise<string> => {
   window.open(`${config.resume_url}`);
   return 'Opening resume...';
 };
-
-// Donate
-// export const donate = async (args: string[]): Promise<string> => {
-//   return `thank you for your interest. 
-// here are the ways you can support my work:
-// - <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.paypal}" target="_blank">paypal</a></u>
-// - <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.donate_urls.patreon}" target="_blank">patreon</a></u>
-// `;
-// };
 
 // Contact
 export const email = async (args: string[]): Promise<string> => {
@@ -109,28 +102,28 @@ directories`;
 };
 
 export const cd = async (args: string[]): Promise<string> => {
-  return `nope, no more directories`;
+  return `nope, you're stuck here`;
 };
 
 export const date = async (args: string[]): Promise<string> => {
   return new Date().toString();
 };
 
-export const vi = async (args: string[]): Promise<string> => {
-  return `woah, you still use 'vi'? just try 'vim'.`;
-};
+// export const vi = async (args: string[]): Promise<string> => {
+//   return `woah, you still use 'vi'? just try 'vim'.`;
+// };
 
-export const vim = async (args: string[]): Promise<string> => {
-  return `'vim' is so outdated. how about 'nvim'?`;
-};
+// export const vim = async (args: string[]): Promise<string> => {
+//   return `'vim' is so outdated. how about 'nvim'?`;
+// };
 
-export const nvim = async (args: string[]): Promise<string> => {
-  return `'nvim'? too fancy. why not 'emacs'?`;
-};
+// export const nvim = async (args: string[]): Promise<string> => {
+//   return `'nvim'? too fancy. why not 'emacs'?`;
+// };
 
-export const emacs = async (args?: string[]): Promise<string> => {
-  return `you know what? just use vscode.`;
-};
+// export const emacs = async (args?: string[]): Promise<string> => {
+//   return `you know what? just use vscode.`;
+// };
 
 export const sudo = async (args?: string[]): Promise<string> => {
   window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank'); // ...I'm sorry
@@ -152,6 +145,8 @@ export const banner = (args?: string[]): string => {
   
 Type 'help' to see the list of available commands.
 Type 'whoami' to return a summary of yours truly, occupant of this portaledge.
-Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.repo}" target="_blank">here</a></u> for the Github repository.
+Type 'repo' or click <u><a class="text-light-blue dark:text-dark-blue underline" href="${config.repo}" target="_blank">here</a></u> for the Github repository of this site.
+
+Site inspired by https://github.com/m4tt72/terminal and https://github.com/Cveinnt/LiveTerm
 `;
 };
