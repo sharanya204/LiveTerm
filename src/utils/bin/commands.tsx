@@ -135,7 +135,7 @@ export const sudo = async (args?: string[]): Promise<string> => {
 
 export const pixelate = () => {
   window.open(`${config.platypusImage}`);
-  return `A pixel art platypus`;
+  return `A pixel art platypus just arrived`;
 };
 
 // Banner
