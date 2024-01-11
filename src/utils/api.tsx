@@ -29,9 +29,7 @@ export const getWeather = async (city: string) => {
 
 export const getPoetry = async () => {
   const { data } = await axios.get('https://poetrydb.org/random');
-  return {
-    poem: `
-    ${JSON.stringify(data[0].lines)}
-    - by ${JSON.stringify(data[0].author)}`,
-  };
+  const author = [`- by ${JSON.stringify(data[0].author)}`];
+  return [ ... data[0].lines, ... author]
+.join('\n')
 };

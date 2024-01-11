@@ -15,9 +15,9 @@ export const projects = async (args: string[]): Promise<string> => {
     .join('\n');
 };
 
-export const poem = async (args: string[]): Promise<string> => {
+export const poem = async (args: string[]): Promise<any> => {
   const data = await getPoetry();
-  return data.poem;
+  return data;
 }
 
 export const readme = async (args: string[]): Promise<string> => {
