@@ -4,7 +4,6 @@ import * as bin from './index';
 import config from '../../../config.json';
 import Platypus from '../../images/platypus.png';
 import Image from 'next/image';
-import Pixelart from '../../components/pixelate';
 
 // Help
 export const help = async (args: string[]): Promise<string> => {
@@ -17,11 +16,11 @@ export const help = async (args: string[]): Promise<string> => {
       c += Object.keys(bin).sort()[i - 1] + ' ';
     }
   }
-  return `Hello! Here's a list of available commands:
+  return `Hello! I'm glad you're here. Here's a list of available commands from this portaledge:
 \n${c}\n
 [tab]: trigger completion.
 [ctrl+l]/clear: clear terminal.\n
-Type 'whoami' or 'about' for information on who I am.
+Use 'whoami' for a primer on who I am.
 `;
 };
 
@@ -40,6 +39,7 @@ More about me:
 'resume' - my latest resume.
 'readme' - my github readme.
 'pixelate' - some pixel art.
+'portaledge' - a definition.
 `;
 };
 
@@ -67,25 +67,20 @@ export const linkedin = async (args: string[]): Promise<string> => {
 };
 
 // Search
-export const google = async (args: string[]): Promise<string> => {
-  window.open(`https://google.com/search?q=${args.join(' ')}`);
-  return `Searching google for ${args.join(' ')}...`;
-};
-
 export const duckduckgo = async (args: string[]): Promise<string> => {
   window.open(`https://duckduckgo.com/?q=${args.join(' ')}`);
   return `Searching duckduckgo for ${args.join(' ')}...`;
 };
 
-export const bing = async (args: string[]): Promise<string> => {
-  window.open(`https://bing.com/search?q=${args.join(' ')}`);
-  return `Wow, alright, here we go on Bing for ${args.join(' ')}...`;
-};
-
 export const reddit = async (args: string[]): Promise<string> => {
   window.open(`https://www.reddit.com/search/?q=${args.join(' ')}`);
-  return `Searching reddit for ${args.join(' ')}...`;
+  return `Hitting reddit up for ${args.join(' ')}...`;
 };
+
+export const tumblr = async (args: string[]): Promise<string> => {
+  window.open(`https://www.tumblr.com/tagged/${args.join(' ')}`);
+  return `Wading in the depths of tumblr for ${args.join(' ')}...`;
+}
 
 // Typical linux commands
 export const echo = async (args: string[]): Promise<string> => {
@@ -112,22 +107,6 @@ export const date = async (args: string[]): Promise<string> => {
   return new Date().toString();
 };
 
-// export const vi = async (args: string[]): Promise<string> => {
-//   return `woah, you still use 'vi'? just try 'vim'.`;
-// };
-
-// export const vim = async (args: string[]): Promise<string> => {
-//   return `'vim' is so outdated. how about 'nvim'?`;
-// };
-
-// export const nvim = async (args: string[]): Promise<string> => {
-//   return `'nvim'? too fancy. why not 'emacs'?`;
-// };
-
-// export const emacs = async (args?: string[]): Promise<string> => {
-//   return `you know what? just use vscode.`;
-// };
-
 export const sudo = async (args?: string[]): Promise<string> => {
   window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank'); // ...I'm sorry
   return `Permission denied: with little power comes... no responsibility? `;
@@ -136,6 +115,10 @@ export const sudo = async (args?: string[]): Promise<string> => {
 export const pixelate = () => {
   window.open(`${config.platypusImage}`);
   return `A pixel art platypus just arrived`;
+};
+
+export const portaledge = () => {
+  return `A portable tent system used by rock climbers to sleep in during a climb lasting multiple days.`;
 };
 
 // Banner

@@ -1,3 +1,3 @@
 export * from './commands';
 export * from './api_commands';
-export { default as whoami } from './sumfetch';
+export { default as whoami } from './whoami';
